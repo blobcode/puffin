@@ -44,7 +44,7 @@ func serveTemplate(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == "/" {
 		r.URL.Path = "index.html"
 	}
-	fp := strings.TrimPrefix(filepath.Clean(r.URL.Path), `\`)
+	fp := strings.TrimPrefix(filepath.Clean(r.URL.Path), `/`)
 
 	// 404
 	_, err := tp.Open(fp)
@@ -75,7 +75,6 @@ func postHandler(w http.ResponseWriter, r *http.Request) {
 
 	lp := "post-layout.html"
 	fp := filepath.Join(strings.TrimPrefix(filepath.Clean(r.URL.Path), "/"))
-	fp = strings.ReplaceAll(strings.TrimPrefix(fp, `\`), `\`, `/`)
 
 	// load the named .txt file for processing
 	txt := strings.ReplaceAll(fp, ".html", ".txt")
