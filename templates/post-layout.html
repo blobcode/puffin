@@ -1,0 +1,65 @@
+{{define "post-layout"}}
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        /* this makes sure the scrollbar is always shown, so the site doesnt change between pages */
+        html {
+            overflow-y: scroll
+        }
+
+        body {
+            background-color: #242424;
+            color: white;
+        }
+
+        a {
+            color: white;
+        }
+
+        #main,
+        #header,
+        aside {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 45px 30px 0;
+            float: left;
+        }
+
+        .grayscale {
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+
+        pre {
+            white-space: pre-wrap;
+        }
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post</title>
+</head>
+<div id="main">
+
+
+
+    <body class="grayscale">
+        <h2><a href="/">blobco.de</a></h2>
+        <hr>
+        <pre>{{ . }}</pre>
+
+    </body>
+</div>
+
+</html>
+{{end}}
