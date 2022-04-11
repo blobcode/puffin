@@ -1,66 +1,22 @@
 {{ define "layout" }}
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-    <style>
-        /* this makes sure the scrollbar is always shown, so the site doesnt change between pages */
-        html {
-            overflow-y: scroll
-        }
-
-        #main,
-        #header,
-        aside,
-        img {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        #header {
-            font-family: monospace;
-            text-align: center;
-        }
-
-        body {
-            background-color: #242424;
-            color: white;
-        }
-
-        a {
-            color: white;
-        }
-
-        .grayscale {
-            -webkit-filter: grayscale(100%);
-            -moz-filter: grayscale(100%);
-            -ms-filter: grayscale(100%);
-            filter: grayscale(100%);
-        }
-    </style>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{template "title"}}</title>
-</head>
+  </head>
 
-<body class="grayscale">
+  <body class="grayscale">
     <div id="header">
-        <h1>blobco.de</h1>
-        <p>
-            <a href="/">home</a>
-            <a href="/posts.html">posts</a>
-            <a href="/about.html">about me</a>
-            |
-            <a href="https://github.com/blobcode">github</a>
-        </p>
-        <hr>
+      <h1>puffin</h1>
+      <p>
+        <a href="/">home</a>
+        <a href="/posts.html">posts</a>
+      </p>
+      <hr />
     </div>
-    <div id="main">
-        {{ template "body" . }}
-    </div>
-</body>
-
+    <div id="main">{{ template "body" . }}</div>
+  </body>
 </html>
 {{ end }}
